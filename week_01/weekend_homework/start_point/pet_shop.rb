@@ -24,10 +24,13 @@ end
 
 # still need to do
 def pets_by_breed(shop, breed)
-  breed_amount = []
+  amount = []
   for sh in shop[:pets]
-    print sh
+    if (sh[:breed] == breed)
+      amount << sh[:breed]
+    end
   end
+  return amount
 end
 
 def add_pet_to_stock(pet_shop, new_pet)
