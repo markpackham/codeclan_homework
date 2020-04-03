@@ -1,3 +1,5 @@
+# Pet Shop
+
 def pet_shop_name(the_name)
   return the_name[:name]
 end
@@ -22,6 +24,8 @@ def stock_count(stock)
   return stock[:pets].length
 end
 
+# Pet Shop Pets
+
 def pets_by_breed(shop, breed)
   amount = []
   for sh in shop[:pets]
@@ -41,9 +45,19 @@ def find_pet_by_name(shop, name)
   return nil
 end
 
+def remove_pet_by_name(shop, name)
+  for sh in shop[:pets]
+    if (sh[:name] == name)
+      sh[:name] = nil
+    end
+  end
+end
+
 def add_pet_to_stock(pet_shop, new_pet)
   pet_shop[:pets].push(new_pet)
 end
+
+# Customers
 
 def customer_cash(customers)
   return customers[:cash]
