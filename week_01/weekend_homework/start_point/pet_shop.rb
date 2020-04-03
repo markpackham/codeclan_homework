@@ -43,13 +43,13 @@ def remove_customer_cash(customer, amount)
 end
 
 def customer_pet_count(customer)
-    count = 0
-    p "hello"
-    if customer[:pet] == nil
-        return 0
-    else
-        for c in customer[:pet]
-            count += 1
-        end
+  count = 0
+  if customer[:pet] == nil
+    return 0
+  else
+    for c in customer[:pet]
+      count += 1
     end
+    return count
+  end
 end
