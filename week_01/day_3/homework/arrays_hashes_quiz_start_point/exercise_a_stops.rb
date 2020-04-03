@@ -1,11 +1,11 @@
-stops = [ "Croy", "Cumbernauld", "Falkirk High", "Linlithgow", "Livingston", "Haymarket" ]
+stops = ["Croy", "Cumbernauld", "Falkirk High", "Linlithgow", "Livingston", "Haymarket"]
 
 #1. Add "Edinburgh Waverley" to the end of the array
 stops.push("Edinburgh Waverley")
 #2. Add "Glasgow Queen St" to the start of the array
 stops.unshift("Glasgow Queen St")
 #3. Add "Polmont" at the appropriate point (between "Falkirk High" and "Linlithgow")
-stops.insert(4,"Polmont")
+stops.insert(4, "Polmont")
 #4. Print out the index position of "Linlithgow"
 p stops.index("Linlithgow")
 #5. Remove "Livingston" from the array using its name
@@ -23,5 +23,5 @@ p stops[-5]
 p stops.reverse()
 #10 Print out all the stops using a for loop
 for stop in stops
-    p stop
+  p stop
 end
