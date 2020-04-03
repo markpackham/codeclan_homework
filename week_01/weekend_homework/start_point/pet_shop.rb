@@ -44,12 +44,16 @@ end
 
 def customer_pet_count(customer)
   count = 0
-  if customer[:pet] == nil
+  if customer[:pets] == nil
     return 0
   else
-    for c in customer[:pet]
+    for c in customer[:pets]
       count += 1
     end
     return count
   end
+end
+
+def add_pet_to_customer(customer, new_pet)
+    customer[:pets] << new_pet
 end
