@@ -6,9 +6,9 @@ def get_tv_show(person)
   return person[:favourites][:tv_show]
 end
 
-def like_food(person,fav)
+def like_food(person, fav)
   food = person[:favourites][:snacks][0]
-  if(fav == food)
+  if (fav == food)
     return true
   else
     return false
@@ -43,7 +43,7 @@ end
 def no_friends(people)
   no_friends = []
   for p in people
-    if(p[:friends].length < 1)
+    if (p[:friends].length < 1)
       no_friends << p[:name]
     end
   end
