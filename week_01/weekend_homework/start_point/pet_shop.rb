@@ -31,21 +31,25 @@ def pets_by_breed(shop, breed)
 end
 
 def add_pet_to_stock(pet_shop, new_pet)
-    pet_shop[:pets].push(new_pet)
+  pet_shop[:pets].push(new_pet)
 end
 
 def customer_cash(customers)
-    return customers[:cash]
+  return customers[:cash]
 end
 
-def remove_customer_cash(customer,amount)
-    customer[:cash] -= amount
+def remove_customer_cash(customer, amount)
+  customer[:cash] -= amount
 end
 
 def customer_pet_count(customer)
     count = 0
-    for c in customer[:pet]
-        count += 1
+    p "hello"
+    if customer[:pet] == nil
+        return 0
+    else
+        for c in customer[:pet]
+            count += 1
+        end
     end
-    return count
 end
