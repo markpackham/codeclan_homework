@@ -98,13 +98,18 @@ end
 # Integration test 1
 
 def sell_pet_to_customer(shop, pet, customer)
+  #  don't bother doing anything if pet doesn't even exist
+  if pet == nil
+    return nil
+  end
+
   cust = @customers
   for c in cust
-    if(c[:name] == customer[:name])
-     add_pet_to_customer(customer, pet)
-     shop[:admin][:pets_sold] += 1
-     remove_customer_cash(customer, pet[:price])
-     add_or_remove_cash(shop, pet[:price])
+    if (c[:name] == customer[:name])
+      add_pet_to_customer(customer, pet)
+      shop[:admin][:pets_sold] += 1
+      remove_customer_cash(customer, pet[:price])
+      add_or_remove_cash(shop, pet[:price])
     end
   end
 end
