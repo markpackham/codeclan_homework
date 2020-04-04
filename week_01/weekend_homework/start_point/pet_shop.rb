@@ -99,10 +99,17 @@ end
 
 def sell_pet_to_customer(shop, pet, customer)
   p "Hello"
-  pet_price = shop[:pets]
-  for p_p in pet_price
-    if (p_p[:name] == pet[:name])
-      p p_p[:price]
+  cust = @customers
+  for c in cust
+    if(c[:name] == customer[:name])
+     add_pet_to_customer(customer, pet)
     end
   end
+
+  # pet_price = shop[:pets]
+  # for p_p in pet_price
+  #   if (p_p[:name] == pet[:name])
+  #       p_p[:price]
+  #   end
+  # end
 end
