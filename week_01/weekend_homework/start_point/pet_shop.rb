@@ -94,3 +94,15 @@ def customer_can_afford_pet(customer, pet)
     return false
   end
 end
+
+# Integration test 1
+
+def sell_pet_to_customer(shop, pet, customer)
+  p "Hello"
+  pet_price = shop[:pets]
+  for p_p in pet_price
+    if (p_p[:name] == pet[:name])
+      p p_p[:price]
+    end
+  end
+end
