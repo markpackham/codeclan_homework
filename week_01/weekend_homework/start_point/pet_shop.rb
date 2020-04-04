@@ -98,18 +98,13 @@ end
 # Integration test 1
 
 def sell_pet_to_customer(shop, pet, customer)
-  p "Hello"
   cust = @customers
   for c in cust
     if(c[:name] == customer[:name])
      add_pet_to_customer(customer, pet)
+     shop[:admin][:pets_sold] += 1
+     remove_customer_cash(customer, pet[:price])
+     add_or_remove_cash(shop, pet[:price])
     end
   end
-
-  # pet_price = shop[:pets]
-  # for p_p in pet_price
-  #   if (p_p[:name] == pet[:name])
-  #       p_p[:price]
-  #   end
-  # end
 end
