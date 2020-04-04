@@ -95,7 +95,7 @@ def customer_can_afford_pet(customer, pet)
   end
 end
 
-# Integration test 1
+# Integration tests
 
 def sell_pet_to_customer(shop, pet, customer)
   #  don't bother doing anything if pet doesn't even exist
@@ -105,11 +105,15 @@ def sell_pet_to_customer(shop, pet, customer)
 
   cust = @customers
   for c in cust
+    # check if customer actually exists
     if (c[:name] == customer[:name])
-      add_pet_to_customer(customer, pet)
-      shop[:admin][:pets_sold] += 1
-      remove_customer_cash(customer, pet[:price])
-      add_or_remove_cash(shop, pet[:price])
+      # check if customer can afford pet
+      if (c[:cash] >= pet[:price])
+        add_pet_to_customer(customer, pet)
+        shop[:admin][:pets_sold] += 1
+        remove_customer_cash(customer, pet[:price])
+        add_or_remove_cash(shop, pet[:price])
+      end
     end
   end
 end
