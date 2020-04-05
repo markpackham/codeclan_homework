@@ -49,6 +49,10 @@ def remove_pet_by_name(shop, name)
   for sh in shop[:pets]
     if (sh[:name] == name)
       sh[:name] = nil
+      sh[:pet_type] = nil
+      sh[:dog] = nil
+      sh[:breed] = nil
+      sh[:price] = nil
     end
   end
 end
