@@ -46,14 +46,12 @@ def find_pet_by_name(shop, name)
 end
 
 def remove_pet_by_name(shop, name)
+  count = 0;
   for sh in shop[:pets]
     if (sh[:name] == name)
-      sh[:name] = nil
-      sh[:pet_type] = nil
-      sh[:dog] = nil
-      sh[:breed] = nil
-      sh[:price] = nil
+      shop[:pets][count].clear
     end
+    count += 1
   end
 end
 
