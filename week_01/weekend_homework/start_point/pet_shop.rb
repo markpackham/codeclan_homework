@@ -28,18 +28,18 @@ end
 
 def pets_by_breed(shop, breed)
   amount = []
-  for sh in shop[:pets]
-    if (sh[:breed] == breed)
-      amount << sh[:breed]
+  for pet in shop[:pets]
+    if (pet[:breed] == breed)
+      amount << pet[:breed]
     end
   end
   return amount
 end
 
 def find_pet_by_name(shop, name)
-  for sh in shop[:pets]
-    if (sh[:name] == name)
-      return sh
+  for pet in shop[:pets]
+    if (pet[:name] == name)
+      return pet
     end
   end
   return nil
@@ -54,6 +54,12 @@ def remove_pet_by_name(shop, name)
     count += 1
   end
 end
+
+# official solution from CodeClan (used find_pet_by_name first then put result in it)
+# def remove_pet_by_name(pet_shop, pet_name)
+#   pet_to_delete = find_pet_by_name(pet_shop, pet_name)
+#   pet_shop[:pets].delete(pet_to_delete)
+# end
 
 def add_pet_to_stock(pet_shop, new_pet)
   pet_shop[:pets].push(new_pet)
